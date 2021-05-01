@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F88BE5C9-8FB8-4F50-B6B9-21FAB88409EA}</ProjectGuid>
+    <ProjectGuid>{D5B7D753-1E25-4921-A5C0-BC6AB3306EFA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MasrafTakibi</RootNamespace>
-    <AssemblyName>MasrafTakibi</AssemblyName>
+    <RootNamespace>MasrafTakibiBase</RootNamespace>
+    <AssemblyName>MasrafTakibiBase</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,13 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,26 +57,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\FrmFirmaTanimi.cs">
-      <SubType>Form</SubType>
+    <Compile Include="BaseTools\GridControlBase.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\FrmFirmaTanimi.Designer.cs">
-      <DependentUpon>FrmFirmaTanimi.cs</DependentUpon>
+    <Compile Include="BaseTools\GridControlBase.Designer.cs">
+      <DependentUpon>GridControlBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DataSets\giderhardetail.cs">
+      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="DataSets\giderharmain.cs">
+      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\MasrafTakibiEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MasrafTakibiEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\MasrafTakibiEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\MasrafTakibiEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\parFirma.cs">
+      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\parGider.cs">
+      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\parGiderTip.cs">
+      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\parLogin.cs">
+      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\FrmFirmaTanimi.resx">
-      <DependentUpon>FrmFirmaTanimi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +108,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="DataSets\MasrafTakibiEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MasrafTakibiEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataSets\MasrafTakibiEntities.edmx.diagram">
+      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,10 +130,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MasrafTakibiBase\MasrafTakibiBase.csproj">
-      <Project>{d5b7d753-1e25-4921-a5c0-bc6ab3306efa}</Project>
-      <Name>MasrafTakibiBase</Name>
-    </ProjectReference>
+    <Folder Include="BaseClass\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSets\MasrafTakibiEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MasrafTakibiEntities.Context.cs</LastGenOutput>
+      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataSets\MasrafTakibiEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
+      <LastGenOutput>MasrafTakibiEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

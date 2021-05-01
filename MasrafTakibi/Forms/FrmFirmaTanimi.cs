@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MasrafTakibiBase.BaseTools;
 
-namespace MasrafTakibi
+namespace MasrafTakibi.Forms
 {
-    public partial class frmMain : Form
+    public partial class FrmFirmaTanim : Form
     {
-        public frmMain()
+        public FrmFirmaTanim()
         {
             InitializeComponent();
         }

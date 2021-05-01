@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1401
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasrafTakibi", "MasrafTakibi\MasrafTakibi.csproj", "{F88BE5C9-8FB8-4F50-B6B9-21FAB88409EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasrafTakibiBase", "MasrafTakibiBase\MasrafTakibiBase.csproj", "{D5B7D753-1E25-4921-A5C0-BC6AB3306EFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F88BE5C9-8FB8-4F50-B6B9-21FAB88409EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F88BE5C9-8FB8-4F50-B6B9-21FAB88409EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F88BE5C9-8FB8-4F50-B6B9-21FAB88409EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5B7D753-1E25-4921-A5C0-BC6AB3306EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B7D753-1E25-4921-A5C0-BC6AB3306EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B7D753-1E25-4921-A5C0-BC6AB3306EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B7D753-1E25-4921-A5C0-BC6AB3306EFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
