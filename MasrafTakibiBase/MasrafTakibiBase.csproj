@@ -57,11 +57,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClass\CommandBuilderBase.cs" />
+    <Compile Include="BaseClass\ConnectClass.cs" />
+    <Compile Include="BaseClass\FirmaBase.cs" />
+    <Compile Include="BaseClass\Result.cs" />
     <Compile Include="BaseTools\GridControlBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="BaseTools\GridControlBase.Designer.cs">
       <DependentUpon>GridControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsFirma.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFirma.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\giderhardetail.cs">
       <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
@@ -112,6 +121,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MasrafTakibiEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DataSets\dsFirma.xsc">
+      <DependentUpon>dsFirma.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsFirma.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFirma.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsFirma.xss">
+      <DependentUpon>dsFirma.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\MasrafTakibiEntities.edmx.diagram">
       <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
     </None>
@@ -129,9 +149,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BaseClass\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DataSets\MasrafTakibiEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -48,6 +48,7 @@
             this.gridControlBase1.TabIndex = 0;
             this.gridControlBase1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControlBase1.Load += new System.EventHandler(this.gridControlBase1_Load);
             // 
             // gridView1
             // 
@@ -61,11 +62,13 @@
             this.gridView1.NewItemRowText = "Yeni Kayıt Satırı";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // id
             // 
             this.id.Caption = "id";
+            this.id.FieldName = "id";
             this.id.MinWidth = 25;
             this.id.Name = "id";
             this.id.Width = 94;
@@ -73,6 +76,7 @@
             // kod
             // 
             this.kod.Caption = "Kod";
+            this.kod.FieldName = "kod";
             this.kod.MinWidth = 25;
             this.kod.Name = "kod";
             this.kod.Visible = true;
@@ -82,6 +86,7 @@
             // aciklama
             // 
             this.aciklama.Caption = "Açıklama";
+            this.aciklama.FieldName = "aciklama";
             this.aciklama.MinWidth = 25;
             this.aciklama.Name = "aciklama";
             this.aciklama.Visible = true;
@@ -91,6 +96,7 @@
             // pasif
             // 
             this.pasif.Caption = "Pasif";
+            this.pasif.FieldName = "pasif";
             this.pasif.MinWidth = 25;
             this.pasif.Name = "pasif";
             this.pasif.Visible = true;
