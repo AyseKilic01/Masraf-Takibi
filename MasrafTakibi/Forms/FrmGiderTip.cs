@@ -1,30 +1,30 @@
-﻿using System;
+﻿using MasrafTakibiBase.BaseClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MasrafTakibiBase.BaseClass;
-using MasrafTakibiBase.BaseTools;
 
 namespace MasrafTakibi.Forms
 {
-    public partial class FrmFirmaTanim : Form
+    public partial class FrmGiderTip : Form
     {
-        FirmaBase firma = null;
-        public FrmFirmaTanim()
+        GiderTipBase gidertip = null;
+        public FrmGiderTip()
         {
             InitializeComponent();
-            firma = new FirmaBase();
+            gidertip = new GiderTipBase();
         }
 
         private void gridControlBase1_Load(object sender, EventArgs e)
         {
-            firma.LoadData();
-            gridControlBase1.DataSource = firma.baseFirma.Firma;
+            gidertip.LoadData();
+            gridControlBase1.DataSource = gidertip.baseGiderTip.GiderTip;
         }
     }
 }

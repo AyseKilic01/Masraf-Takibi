@@ -9,40 +9,40 @@ using System.Threading.Tasks;
 
 namespace MasrafTakibiBase.BaseClass
 {
-   public class FirmaBase
+   public class GiderTipBase
     {
         SqlDataAdapter daMain = null;
-        dsFirma dsFirm1 = new dsFirma();
-        SqlConnection consql = new SqlConnection(ConnectClass.getConnectionString());
-        public FirmaBase()
+        //connectstring 
+        SqlConnection con = new SqlConnection(ConnectClass.getConnectionString());
+        dsGiderTip dsGiderTip1 = new dsGiderTip();
+        public GiderTipBase()
         {
             Init();
         }
-        public dsFirma baseFirma { get { return dsFirm1; } }
+        public dsGiderTip baseGiderTip { get { return dsGiderTip1; } }
         private void Init()
         {
             SqlCommand cmm = new SqlCommand();
-            cmm.Connection = consql;
-            cmm.CommandText = "select a.id, a.kod, a.aciklama, a.pasif  from parFirma a ";
+            cmm.Connection = con;
+            cmm.CommandText = "select a.id, a.code, a.explanation, a.pasif  from parGiderTip a ";
 
             daMain = new SqlDataAdapter(cmm);
             CommandBuilderBase cb = new CommandBuilderBase();
             cb.AddField("id", SqlDbType.Int, 4, true);
-            cb.AddField("kod", SqlDbType.VarChar, 50);
-            cb.AddField("aciklama", SqlDbType.VarChar, 130);
+            cb.AddField("code", SqlDbType.VarChar, 50);
+            cb.AddField("explanation", SqlDbType.VarChar, 130);
             cb.AddField("pasif", SqlDbType.Bit, 0);
-            cb.SqlTableName = "parFirma";
-            cb.Con = consql;
+            cb.SqlTableName = "parGiderTip";
+            cb.Con = con;
             cb.CreateCommands(daMain);
         }
-
         public void LoadData()
         {
-            daMain.Fill(dsFirm1.Firma);
+            daMain.Fill(dsGiderTip1.GiderTip);
         }
         public void SaveData()
         {
-            daMain.Update(dsFirm1.Firma);
+            daMain.Update(dsGiderTip1.GiderTip);
         }
         public Result Validate()
         {

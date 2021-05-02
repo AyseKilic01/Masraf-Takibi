@@ -19,6 +19,7 @@ namespace MasrafTakibiBase.BaseClass
         {
             Init();
         }
+        public dsGider baseGider { get { return dsGider1; } }
         private void Init()
         {
             SqlCommand cmm = new SqlCommand();

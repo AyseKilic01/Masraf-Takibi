@@ -26,12 +26,14 @@ namespace MasrafTakibi
 
         private void btnGiderTip_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            FrmGiderTip frm = new FrmGiderTip();
+            frm.Show();
         }
 
         private void btnGiderTanimi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            FrmGiderTanimi frm = new FrmGiderTanimi();
+            frm.Show();
         }
 
         private void btnGiderFaturasi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

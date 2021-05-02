@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -62,6 +63,7 @@
     <Compile Include="BaseClass\ConnectClass.cs" />
     <Compile Include="BaseClass\FirmaBase.cs" />
     <Compile Include="BaseClass\GiderBase.cs" />
+    <Compile Include="BaseClass\GiderTipBase.cs" />
     <Compile Include="BaseClass\Result.cs" />
     <Compile Include="BaseTools\GridControlBase.cs">
       <SubType>Component</SubType>
