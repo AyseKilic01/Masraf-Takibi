@@ -1,2 +1,7 @@
 1480; 783
 form width height
+
+xtrabars.bar dan BarBase component classı yazalım.
+Class la Kaydet, Kapat, Kaydet% Kapat kontrollerini düzenleyelim.
+Oluşturduğumuz BasetoolBarı Firma ekranında kullanalım.
+

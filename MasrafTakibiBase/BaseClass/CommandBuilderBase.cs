@@ -12,6 +12,7 @@ namespace MasrafTakibiBase.BaseClass
     {
 
         List<SqlField> sqlFields = new List<SqlField>();
+        //dataadapter nesnesini en başta oluştur ve içini doldur
         SqlDataAdapter da;
         string sqltablename = "";
         SqlConnection con = null;

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -60,6 +61,7 @@
     <Compile Include="BaseClass\CommandBuilderBase.cs" />
     <Compile Include="BaseClass\ConnectClass.cs" />
     <Compile Include="BaseClass\FirmaBase.cs" />
+    <Compile Include="BaseClass\GiderBase.cs" />
     <Compile Include="BaseClass\Result.cs" />
     <Compile Include="BaseTools\GridControlBase.cs">
       <SubType>Component</SubType>
@@ -67,43 +69,32 @@
     <Compile Include="BaseTools\GridControlBase.Designer.cs">
       <DependentUpon>GridControlBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseTools\XtraBarBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseTools\XtraBarBase.Designer.cs">
+      <DependentUpon>XtraBarBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsFirma.cs">
+      <DependentUpon>dsFirma.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsFirma.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsFirma.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\giderhardetail.cs">
-      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
+    <Compile Include="DataSets\dsGider.cs">
+      <DependentUpon>dsGider.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\giderharmain.cs">
-      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\MasrafTakibiEntities.Context.cs">
+    <Compile Include="DataSets\dsGider.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MasrafTakibiEntities.Context.tt</DependentUpon>
+      <DependentUpon>dsGider.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\MasrafTakibiEntities.cs">
+    <Compile Include="DataSets\dsGiderTip.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\MasrafTakibiEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\parFirma.cs">
-      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\parGider.cs">
-      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\parGiderTip.cs">
-      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\parLogin.cs">
-      <DependentUpon>MasrafTakibiEntities.tt</DependentUpon>
+      <DependentUpon>dsGiderTip.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,10 +108,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="DataSets\MasrafTakibiEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MasrafTakibiEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="DataSets\dsFirma.xsc">
       <DependentUpon>dsFirma.xsd</DependentUpon>
     </None>
@@ -132,8 +119,27 @@
     <None Include="DataSets\dsFirma.xss">
       <DependentUpon>dsFirma.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\MasrafTakibiEntities.edmx.diagram">
-      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
+    <None Include="DataSets\dsGider.xsc">
+      <DependentUpon>dsGider.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsGider.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGider.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsGider.xss">
+      <DependentUpon>dsGider.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsGiderTip.xsc">
+      <DependentUpon>dsGiderTip.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsGiderTip.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGiderTip.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsGiderTip.xss">
+      <DependentUpon>dsGiderTip.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -150,18 +156,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="DataSets\MasrafTakibiEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MasrafTakibiEntities.Context.cs</LastGenOutput>
-      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
-    </Content>
-    <Content Include="DataSets\MasrafTakibiEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MasrafTakibiEntities.edmx</DependentUpon>
-      <LastGenOutput>MasrafTakibiEntities.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
