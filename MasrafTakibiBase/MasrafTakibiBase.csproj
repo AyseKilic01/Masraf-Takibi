@@ -64,12 +64,19 @@
     <Compile Include="BaseClass\FirmaBase.cs" />
     <Compile Include="BaseClass\GiderBase.cs" />
     <Compile Include="BaseClass\GiderTipBase.cs" />
+    <Compile Include="BaseClass\ItemClass.cs" />
     <Compile Include="BaseClass\Result.cs" />
     <Compile Include="BaseTools\GridControlBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="BaseTools\GridControlBase.Designer.cs">
       <DependentUpon>GridControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseTools\PanelControlBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseTools\PanelControlBase.Designer.cs">
+      <DependentUpon>PanelControlBase.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseTools\XtraBarBase.cs">
       <SubType>Component</SubType>
